@@ -1,0 +1,13 @@
+cd /root/cjbDisk/Projects/FLM-Hierarchical-Classification
+conda activate py38torch170wordnet
+nohup python MNIST_work12345.py >>12345.txt 2>&1 &
+
+tail -f 2.txt
+
+watch -n 1 -d nvidia-smi
+
+cd /root/cjbDisk/Projects/FLM-Hierarchical-Classification/test
+conda activate py38torch170wordnet
+nohup python test_nohup.py >> test_nohup_out.txt 2>&1 &
+
+kill
